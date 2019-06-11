@@ -1,0 +1,10 @@
+<h2>Details</h2>
+<div *ngIf="item">
+    <iframe [src]="video" class="e2e-iframe-trusted-src" width="540" height="320">
+    </iframe>
+<h3>{{item.name}}</h3>
+<h3>{{item.type}}</h3>
+<h3>{{item.description}}</h3> 
+<button (click)="showStuff()">show stuf</button>
+
+</div>

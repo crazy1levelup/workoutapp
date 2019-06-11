@@ -1,0 +1,65 @@
+[
+    {
+    "id": 1,
+    "name": "Handstand",
+    "type": "Shoulders",
+    "videolink": "KkeQJNtIDu8",
+    "description": "handstand bla bla"
+},
+{
+    "id": 2,
+    "name": "Pull up",
+    "type": "Back",
+    "videolink": "d-d5kuSFBMk",
+    "description": "pullup bla bla"
+},
+{
+    "id": 3,
+    "name": "Push up",
+    "type": "Chest",
+    "videolink": "gVaG_1TtbCo",
+    "description": "push up bla bla"
+},
+{
+    "id": 4,
+    "name": "Squats",
+    "type": "Legs",
+    "videolink": "gVaG_1TtbCo",
+    "description": "squats bla bla"
+},
+{
+    "id": 5,
+    "name": "Planche",
+    "type": "Shoulders",
+    "videolink": "gVaG_1TtbCo",
+    "description": "planche bla bla"
+},
+{
+    "id": 6,
+    "name": "Leg raises",
+    "type": "Abdomen",
+    "videolink": "gVaG_1TtbCo",
+    "description": "leg raises bla bla"
+},
+{
+    "id": 7,
+    "name": "Muscle up",
+    "type": "Back",
+    "videolink": "gVaG_1TtbCo",
+    "description": "muscle up bla bla"
+},
+{
+    "id": 8,
+    "name": "L sit",
+    "type": "Abdomen",
+    "videolink": "gVaG_1TtbCo",
+    "description": "l sit bla bla"
+},
+{
+    "id": 9,
+    "name": "Flag",
+    "type": "Abdomen",
+    "videolink": "gVaG_1TtbCo",
+    "description": "flag bla bla"
+}
+]
