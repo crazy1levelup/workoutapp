@@ -41,9 +41,7 @@ videoLink;
     })
     
   }
-  showStuff() {
-    console.log(this.item.videolink)
-  }
+
   
 
 }
