@@ -35,9 +35,6 @@ videoLink;
         this.video = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink)
         console.log(this.videoLink)
       }
-      
-      // this.id = this.item.videolink
-      // console.log(this.id)
     })
     
   }
