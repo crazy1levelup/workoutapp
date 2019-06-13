@@ -6,3 +6,14 @@ export class Workout {
     description: String;
 
 }
+
+export class Test {
+   count: Number;
+   next: String;
+   previous: String;
+   results: Results[];
+}
+
+export class Results {
+    constructor(public id:Number, type: String, number:Number, quantity: Number){}
+}
