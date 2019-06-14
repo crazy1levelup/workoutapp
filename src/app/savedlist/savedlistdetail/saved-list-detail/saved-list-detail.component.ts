@@ -1,28 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { SharedService } from '../shared.service';
-import { filter, map, flatMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SharedService } from 'src/app/shared.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-item-detail',
-  templateUrl: './item-detail.component.html',
-  styleUrls: ['./item-detail.component.css']
+  selector: 'app-saved-list-detail',
+  templateUrl: './saved-list-detail.component.html',
+  styleUrls: ['./saved-list-detail.component.css']
 })
-export class ItemDetailComponent implements OnInit {
-items=[];
-item;
-video;
-videoLink;
+export class SavedListDetailComponent implements OnInit {
+  items=[];
+  item;
+  video;
+  videoLink;
 
   constructor(private route:ActivatedRoute, private share:SharedService,private sanitizer: DomSanitizer) {
-
     this.share.getWorkoutList().subscribe(data=> this.items = data);
    }
 
   ngOnInit() {
-    
-   
+
     this.route.paramMap.subscribe(params => {
       var moreItems = this.items.filter((res) =>{
         return res.id === parseInt(params.get('id'))
@@ -36,9 +33,6 @@ videoLink;
         console.log(this.videoLink)
       }
     })
-    
   }
-
-  
 
 }

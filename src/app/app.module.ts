@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { SavedlistComponent } from './savedlist/savedlist.component';
 import { ItemsComponent } from './items/items.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SavedListDetailComponent } from './savedlist/savedlistdetail/saved-list-detail/saved-list-detail.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,20 +24,27 @@ import { ItemsComponent } from './items/items.component';
     ItemDetailComponent,
     HomeComponent,
     SavedlistComponent,
-    ItemsComponent
+    ItemsComponent,
+    SavedListDetailComponent
   
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
       {path: 'calisthenics', component: ItemListComponent,children:[
         {path: ':id', component: ItemDetailComponent}
       ]},
-      {path: 'yourworkout', component: SavedlistComponent}
+      {path: 'yourworkout', component: SavedlistComponent, children:[
+        {path: ':id', component: SavedListDetailComponent}
+      ]}
     ])
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
   providers: [],
   bootstrap: [AppComponent]
 })

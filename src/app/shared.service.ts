@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Workout } from './items.model';
 import { Test } from './items.model';
-import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
