@@ -12,8 +12,8 @@ import { SavedlistComponent } from './savedlist/savedlist.component';
 import { ItemsComponent } from './items/items.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SavedListDetailComponent } from './savedlist/savedlistdetail/saved-list-detail/saved-list-detail.component';
-
-
+import {ToastrModule} from 'ngx-toastr'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -30,6 +30,8 @@ import { SavedListDetailComponent } from './savedlist/savedlistdetail/saved-list
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
