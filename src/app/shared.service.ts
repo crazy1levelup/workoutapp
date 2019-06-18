@@ -11,10 +11,12 @@ items: Workout[];
 
   constructor(private http: HttpClient) { }
 
-  getWorkoutList(): Observable<Workout[]> {
-    return this.http.get<Workout[]>('http://127.0.0.1:8000/items/')
+  getWorkoutList(filter): Observable<Workout[]> {
+    return this.http.get<Workout[]>('http://127.0.0.1:8000/items?type=' + filter)
      
   }
+
+
 
   
 }

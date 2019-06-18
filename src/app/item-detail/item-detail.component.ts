@@ -17,7 +17,7 @@ videoLink;
 
   constructor(private route:ActivatedRoute, private share:SharedService,private sanitizer: DomSanitizer) {
 
-    this.share.getWorkoutList().subscribe(data=> this.items = data);
+    this.share.getWorkoutList('').subscribe(data=> this.items = data);
    }
 
   ngOnInit() {

@@ -16,7 +16,7 @@ items=[];
 test=[];
 item:SavedWorkout;
   constructor(private share: SharedService, private sepItem: SeparateItemsService) {
-    this.share.getWorkoutList().subscribe(data=> this.items = data);
+    this.share.getWorkoutList('').subscribe(data=> this.items = data);
     // this.share.getTestList().subscribe(data1=> this.test = data1);
    }
 
@@ -44,6 +44,9 @@ item:SavedWorkout;
       
       event.preventDefault();
       event.stopPropagation();
+    }
+    filterType(type) {
+      this.share.getWorkoutList(type).subscribe(data=> this.items = data);
     }
 
 }

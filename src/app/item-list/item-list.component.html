@@ -1,17 +1,29 @@
 <div class="container">
-<div class="row">
-        <div class="col-6">
-            <h2>Workouts({{items.length}})</h2>
-          <div class="list-group" id="list-tab" role="tablist" >
-            <a *ngFor="let item of items" [routerLink]="[item.id]" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" >{{item.name}}
-              <span class="float-right" >
-                  <span (click)="doSome(item.id)" ><i class="fas fa-plus-circle" value="item.id"></i></span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div>
-         
-            <router-outlet></router-outlet>
-</div>
-</div>
+  <div class="row">
+    <div class="col-6">
+          <h2>Exercises({{items.length}}) <div class="dropdown float-right">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <Button class="dropdown-item" (click)="filterType('')">All</Button>
+                <Button class="dropdown-item" (click)="filterType('Shoulders')">Shoulders</Button>
+                <Button class="dropdown-item" (click)="filterType('Back')">Back</Button>
+                <Button class="dropdown-item" (click)="filterType('Legs')">Legs</Button>
+                <Button class="dropdown-item" (click)="filterType('Abdomen')">Abdomen</Button>
+                <Button class="dropdown-item" (click)="filterType('Chest')">Chest</Button>
+              </div>
+            </div></h2>
+      <div class="list-group" id="list-tab" role="tablist">
+        <a *ngFor="let item of items" [routerLink]="[item.id]" class="list-group-item list-group-item-action"
+          id="list-home-list" data-toggle="list">{{item.name}}
+          <span class="float-right">
+            <span (click)="doSome(item.id)"><i class="fas fa-plus-circle" value="item.id"></i></span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
