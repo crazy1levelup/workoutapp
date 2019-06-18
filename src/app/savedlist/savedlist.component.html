@@ -3,7 +3,7 @@
           <div class="col-6">
               <h2>Your exercises({{items.length}})</h2>
             <div class="list-group" id="list-tab" role="tablist" >
-              <a *ngFor="let item of items" [routerLink]="[item.id]" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" >{{item.name}}
+              <a *ngFor="let item of items" [routerLink]="[item.nr]" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" >{{item.name}}
               </a>
             </div>
           </div>

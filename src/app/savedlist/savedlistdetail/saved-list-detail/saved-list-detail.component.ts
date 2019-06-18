@@ -23,7 +23,7 @@ export class SavedListDetailComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       var moreItems = this.items.filter((res) =>{
-        return res.id === parseInt(params.get('id'))
+        return res.nr === parseInt(params.get('id'))
         
       })
       this.item = moreItems[0];
