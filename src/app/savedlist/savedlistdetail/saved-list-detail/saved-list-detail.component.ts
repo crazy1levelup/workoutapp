@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SeparateItemsService } from 'src/app/separate-items.service';
 
 @Component({
   selector: 'app-saved-list-detail',
@@ -14,8 +15,8 @@ export class SavedListDetailComponent implements OnInit {
   video;
   videoLink;
 
-  constructor(private route:ActivatedRoute, private share:SharedService,private sanitizer: DomSanitizer) {
-    this.share.getWorkoutList().subscribe(data=> this.items = data);
+  constructor(private route:ActivatedRoute, private share:SharedService,private sanitizer: DomSanitizer, private sepItem: SeparateItemsService) {
+    this.sepItem.getWorkout().subscribe(data=> this.items = data);
    }
 
   ngOnInit() {

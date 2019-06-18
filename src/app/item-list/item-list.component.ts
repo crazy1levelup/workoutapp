@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { SeparateItemsService } from '../separate-items.service';
+import { SavedWorkout } from '../items.model';
 
 
 
@@ -13,10 +14,10 @@ import { SeparateItemsService } from '../separate-items.service';
 export class ItemListComponent implements OnInit {
 items=[];
 test=[];
-item;
+item:SavedWorkout;
   constructor(private share: SharedService, private sepItem: SeparateItemsService) {
     this.share.getWorkoutList().subscribe(data=> this.items = data);
-    this.share.getTestList().subscribe(data1=> this.test = data1);
+    // this.share.getTestList().subscribe(data1=> this.test = data1);
    }
 
   ngOnInit() {
@@ -29,6 +30,7 @@ item;
         })
         this.item = moreItems[0]
         console.log(id)
+        this.item = Object.assign({}, this.item, {nr: id})
         console.log(this.item)
         if(this.item){
           this.sepItem.adToWorkout(this.item)

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeparateItemsService } from '../separate-items.service';
+import { Workout } from '../items.model';
 
 @Component({
   selector: 'app-savedlist',
@@ -7,9 +8,9 @@ import { SeparateItemsService } from '../separate-items.service';
   styleUrls: ['./savedlist.component.css']
 })
 export class SavedlistComponent implements OnInit {
-items;
+items=[];
   constructor(private sepItem: SeparateItemsService) {
-    this.items = this.sepItem.getWorkout()
+    this.sepItem.getWorkout().subscribe(res =>this.items = res)
    }
 
   ngOnInit() {

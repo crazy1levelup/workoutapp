@@ -7,11 +7,13 @@ export class Workout {
 
 }
 
-export class Test {
-   count: Number;
-   next: String;
-   previous: String;
-   results: Results[];
+export class SavedWorkout {
+    id: Number;
+    nr: Number;
+    name: String;
+    type: String;
+    videolink: String;
+    description: String;
 }
 
 export class Results {
