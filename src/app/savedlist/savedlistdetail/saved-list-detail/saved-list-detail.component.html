@@ -1,12 +1,13 @@
 <h2>Details</h2>
 <div *ngIf="item">
-    <iframe [src]="video" class="resp-iframe e2e-iframe-trusted-src" width="512" height="320" gesture="media"  allow="encrypted-media" allowfullscreen>
-    </iframe>
-    <div class="card col-sm-12" style="width: 32rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{item.name}}({{item.type}})</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Description:</h6>
-          <p class="card-text">{{item.description}}</p>
-        </div>
-      </div>
+  <iframe [src]="video" class="resp-iframe e2e-iframe-trusted-src" width="512" height="320" gesture="media"
+    allow="encrypted-media" allowfullscreen>
+  </iframe>
+  <div class="card col-sm-12" style="width: 32rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}({{item.type}})</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Description:</h6>
+      <p class="card-text">{{item.description}}</p>
+    </div>
+  </div>
 </div>

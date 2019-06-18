@@ -12,41 +12,34 @@ import { SavedWorkout } from '../items.model';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
-items=[];
-test=[];
-item:SavedWorkout;
+  items = [];
+  test = [];
+  item: SavedWorkout;
   constructor(private share: SharedService, private sepItem: SeparateItemsService) {
-    this.share.getWorkoutList('').subscribe(data=> this.items = data);
-    // this.share.getTestList().subscribe(data1=> this.test = data1);
-   }
+    this.share.getWorkoutList('').subscribe(data => this.items = data);
+  }
 
   ngOnInit() {
-   
-    }
-    doSome(id) {
-      if(this.items) {
-        var moreItems = this.items.filter((res) =>{
-          return res.id === id
-        })
-        this.item = moreItems[0]
-        console.log(id)
-        this.item = Object.assign({}, this.item, {nr: id})
-        console.log(this.item)
-        if(this.item){
-          this.sepItem.adToWorkout(this.item)
-          console.log(this.sepItem.getWorkout())
-        }
-       
-        
-        
-      }
-     
-      
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    filterType(type) {
-      this.share.getWorkoutList(type).subscribe(data=> this.items = data);
-    }
 
+  }
+  doSome(id) {
+    if (this.items) {
+      var moreItems = this.items.filter((res) => {
+        return res.id === id
+      })
+      this.item = moreItems[0]
+      console.log(id)
+      this.item = Object.assign({}, this.item, { nr: id })
+      console.log(this.item)
+      if (this.item) {
+        this.sepItem.adToWorkout(this.item)
+        console.log(this.sepItem.getWorkout())
+      }
+    }
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  filterType(type) {
+    this.share.getWorkoutList(type).subscribe(data => this.items = data);
+  }
 }

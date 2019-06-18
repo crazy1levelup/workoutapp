@@ -8,10 +8,10 @@ import { Workout } from '../items.model';
   styleUrls: ['./savedlist.component.css']
 })
 export class SavedlistComponent implements OnInit {
-items=[];
+  items = [];
   constructor(private sepItem: SeparateItemsService) {
-    this.sepItem.getWorkout().subscribe(res =>this.items = res)
-   }
+    this.sepItem.getWorkout().subscribe(res => this.items = res)
+  }
 
   ngOnInit() {
   }

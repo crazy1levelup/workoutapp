@@ -22,12 +22,11 @@ videoLink;
 
   ngOnInit() {
     
-   
     this.route.paramMap.subscribe(params => {
       var moreItems = this.items.filter((res) =>{
         return res.id === parseInt(params.get('id'))
-        
       })
+      
       this.item = moreItems[0];
       if(this.item) {
         console.log(this.item.videolink)
@@ -35,10 +34,6 @@ videoLink;
         this.video = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink)
         console.log(this.videoLink)
       }
-    })
-    
+    }) 
   }
-
-  
-
 }

@@ -10,24 +10,24 @@ import { SeparateItemsService } from 'src/app/separate-items.service';
   styleUrls: ['./saved-list-detail.component.css']
 })
 export class SavedListDetailComponent implements OnInit {
-  items=[];
+  items = [];
   item;
   video;
   videoLink;
 
-  constructor(private route:ActivatedRoute, private share:SharedService,private sanitizer: DomSanitizer, private sepItem: SeparateItemsService) {
-    this.sepItem.getWorkout().subscribe(data=> this.items = data);
-   }
+  constructor(private route: ActivatedRoute, private share: SharedService, private sanitizer: DomSanitizer, private sepItem: SeparateItemsService) {
+    this.sepItem.getWorkout().subscribe(data => this.items = data);
+  }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
-      var moreItems = this.items.filter((res) =>{
+      var moreItems = this.items.filter((res) => {
         return res.nr === parseInt(params.get('id'))
-        
       })
+      
       this.item = moreItems[0];
-      if(this.item) {
+      if (this.item) {
         console.log(this.item.videolink)
         this.videoLink = 'https://www.youtube.com/embed/' + this.item.videolink;
         this.video = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink)
@@ -35,5 +35,4 @@ export class SavedListDetailComponent implements OnInit {
       }
     })
   }
-
 }
