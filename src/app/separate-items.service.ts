@@ -21,7 +21,10 @@ adToWorkout(workout: SavedWorkout) {
 }
 getWorkout() {
   return this.http.get<SavedWorkout[]>('http://127.0.0.1:8000/saveditems/')
-  
+}
+
+deleteWorkout(id) {
+  return this.http.delete('http://127.0.0.1:8000/saveditems/' + id)
 }
 
 }
