@@ -13,7 +13,7 @@ export class SavedlistComponent implements OnInit {
 
 
   constructor(private sepItem: SeparateItemsService) {
-    this.sepItem.getWorkout().subscribe(res => this.items = res)
+    this.sepItem.getWorkoutDay(this.days[0]).subscribe(res => this.items = res)
   }
 
   ngOnInit() {
