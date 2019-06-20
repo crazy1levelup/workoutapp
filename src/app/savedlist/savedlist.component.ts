@@ -25,13 +25,12 @@ export class SavedlistComponent implements OnInit {
         return res.nr === nr
       })
       var itemID = moreItems[0].id
-      this.sepItem.deleteWorkout(itemID).subscribe()
-      this.items = this.items.filter(item => item.id != itemID);
-     
+      if(confirm("Are you sure?")) {
+        this.sepItem.deleteWorkout(itemID).subscribe()
+        this.items = this.items.filter(item => item.id != itemID);
+      }
     }
-    
-    
-    // this.sepItem.deleteWorkout(nr).subscribe()
+
     event.preventDefault();
     event.stopPropagation();
   }
