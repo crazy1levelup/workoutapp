@@ -40,7 +40,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
         {path: ':id', component: ItemDetailComponent}
       ]},
       {path: 'yourworkout', component: SavedlistComponent, children:[
-        {path: ':id', component: SavedListDetailComponent}
+        {path: ':nr', component: SavedListDetailComponent}
       ]}
     ])
   ],
