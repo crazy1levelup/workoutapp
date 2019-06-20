@@ -19,9 +19,18 @@
       <div class="list-group" id="list-tab" role="tablist">
         <a *ngFor="let item of items" [routerLink]="[item.id]" class="list-group-item list-group-item-action"
           id="list-home-list" data-toggle="list">{{item.name}}
-          <span class="float-right">
-            <span (click)="doSome(item.id)"><i class="fas fa-plus-circle" value="item.id"></i></span>
-          </span>
+          <a class="float-right" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus-circle"></i>
+      </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <span class="dropdown-item" (click)="doSome(item.id, 'Monday')">Monday</span> 
+            <span class="dropdown-item" (click)="doSome(item.id, 'Tuesday')">Tuesday</span>
+            <span class="dropdown-item" (click)="doSome(item.id, 'Wednesday')">Wednesday</span>
+            <span class="dropdown-item" (click)="doSome(item.id, 'Thursday')">Thursday</span>
+            <span class="dropdown-item" (click)="doSome(item.id, 'Friday')">Friday</span>
+            <span class="dropdown-item" (click)="doSome(item.id, 'Saturday')">Saturday</span>
+            <span class="dropdown-item" (click)="doSome(item.id, 'Sunday')">Sunday</span>
+          </div>
         </a>
       </div>
     </div>

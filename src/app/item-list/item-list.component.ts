@@ -22,14 +22,14 @@ export class ItemListComponent implements OnInit {
   ngOnInit() {
 
   }
-  doSome(id) {
+  doSome(id, day) {
     if (this.items) {
       var moreItems = this.items.filter((res) => {
         return res.id === id
       })
       this.item = moreItems[0]
       console.log(id)
-      this.item = Object.assign({}, this.item, { nr: id })
+      this.item = Object.assign({}, this.item, { nr: id, day: day })
       console.log(this.item)
       if (this.item) {
         this.sepItem.adToWorkout(this.item)

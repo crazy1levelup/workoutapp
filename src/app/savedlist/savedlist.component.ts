@@ -9,6 +9,7 @@ import { Workout } from '../items.model';
 })
 export class SavedlistComponent implements OnInit {
   items = [];
+  days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
   constructor(private sepItem: SeparateItemsService) {
@@ -33,5 +34,10 @@ export class SavedlistComponent implements OnInit {
 
     event.preventDefault();
     event.stopPropagation();
+  }
+
+  changeDayWorkout(day) {
+    this.sepItem.getWorkoutDay(day).subscribe(res => this.items = res)
+    console.log(this.items)
   }
 }

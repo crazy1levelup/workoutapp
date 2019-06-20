@@ -14,6 +14,7 @@ export class SavedWorkout {
     type: String;
     videolink: String;
     description: String;
+    day: String;
 }
 
 export class Results {
