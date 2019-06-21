@@ -22,6 +22,8 @@ export class ItemListComponent implements OnInit {
   ngOnInit() {
 
   }
+
+
   doSome(id, day) {
     if (this.items) {
       var moreItems = this.items.filter((res) => {
@@ -36,8 +38,7 @@ export class ItemListComponent implements OnInit {
         console.log(this.sepItem.getWorkout())
       }
     }
-    event.preventDefault();
-    event.stopPropagation();
+    
   }
   filterType(type) {
     this.share.getWorkoutList(type).subscribe(data => this.items = data);
